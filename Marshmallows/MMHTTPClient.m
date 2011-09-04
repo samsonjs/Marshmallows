@@ -73,54 +73,54 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     return [[[self sharedClient] baseURL] stringByAppendingPathComponent: path];
 }
 
-+ (void) request: (NSDictionary *)options then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) request: (NSDictionary *)options then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] request: options then: callback];
+    return [[self sharedClient] request: options then: callback];
 }
 
-+ (void) get: (NSString *)url then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) get: (NSString *)url then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] get: url then: callback];
+    return [[self sharedClient] get: url then: callback];
 }
 
-+ (void) getImage: (NSString *)url then: (MMHTTPClientImageCallback)callback
++ (MMHTTPRequest *) getImage: (NSString *)url then: (MMHTTPImageCallback)callback
 {
-    [[self sharedClient] getImage: url then: callback];
+    return [[self sharedClient] getImage: url then: callback];
 }
 
-+ (void) getText: (NSString *)url then: (MMHTTPClientTextCallback)callback
++ (MMHTTPRequest *) getText: (NSString *)url then: (MMHTTPTextCallback)callback
 {
-    [[self sharedClient] getText: url then: callback];
+    return [[self sharedClient] getText: url then: callback];
 }
 
-+ (void) post: (NSString *)url then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) post: (NSString *)url then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] post: url then: callback];
+    return [[self sharedClient] post: url then: callback];
 }
 
-+ (void) post: (NSString *)url data: (NSData *)data then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] post: url data: data then: callback];
+    return [[self sharedClient] post: url data: data then: callback];
 }
 
-+ (void) put: (NSString *)url data: (NSData *)data then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) put: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] put: url data: data then: callback];
+    return [[self sharedClient] put: url data: data then: callback];
 }
 
-+ (void) delete: (NSString *)url then: (MMHTTPClientCallback)callback
++ (MMHTTPRequest *) delete: (NSString *)url then: (MMHTTPCallback)callback
 {
-    [[self sharedClient] delete: url then: callback];
+    return [[self sharedClient] delete: url then: callback];
 }
 
 - (id) init
 {
-    return [self initWithBaseURL: nil timeout: MMHTTPClientDefaultTimeout];
+    return [self initWithBaseURL: nil timeout: MMHTTPRequestDefaultTimeout];
 }
 
 - (id) initWithBaseURL: (NSString *)baseURL
 {
-    return [self initWithBaseURL: baseURL timeout: MMHTTPClientDefaultTimeout];
+    return [self initWithBaseURL: baseURL timeout: MMHTTPRequestDefaultTimeout];
 }
 
 - (id) initWithBaseURL: (NSString *)baseURL timeout: (NSUInteger)timeout
@@ -129,12 +129,6 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     if (self) {
         _baseURL = [baseURL copy];
         _timeout = timeout;
-        _callbacks = [[NSMutableDictionary alloc] init];
-        _connections = [[NSMutableDictionary alloc] init];
-        _data = [[NSMutableDictionary alloc] init];
-        _headers = [[NSMutableDictionary alloc] init];
-        _statusCodes = [[NSMutableDictionary alloc] init];
-        _types = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -162,193 +156,85 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     return [_baseURL stringByAppendingPathComponent: path];
 }
 
-- (void) getImage: (NSString *)url then: (MMHTTPClientImageCallback)callback
+- (MMHTTPRequest *) getImage: (NSString *)url then: (MMHTTPImageCallback)callback
 {
-    [self request: [NSDictionary dictionary] then: (MMHTTPClientCallback)callback];
+    return [self request: [NSDictionary dictionary] then: (MMHTTPCallback)callback];
 }
 
-- (void) getText: (NSString *)url then: (MMHTTPClientTextCallback)callback
+- (MMHTTPRequest *) getText: (NSString *)url then: (MMHTTPTextCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              url,     @"url",
                              @"text", @"type",
                              nil];
-    [self request: options then: (MMHTTPClientCallback)callback];
+    return [self request: options then: (MMHTTPCallback)callback];
 }
 
-- (void) get: (NSString *)url then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) get: (NSString *)url then: (MMHTTPCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              url,      @"url",
                              @"image", @"type",
                              nil];
-    [self request: options then: (MMHTTPClientCallback)callback];
+    return [self request: options then: (MMHTTPCallback)callback];
 }
 
-- (void) post: (NSString *)url then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) post: (NSString *)url then: (MMHTTPCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              @"POST", @"method",
                              url,     @"url",
                              nil];
-    [self request: options then: callback];
+    return [self request: options then: callback];
 }
 
-- (void) post: (NSString *)url data: (NSData *)data then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              @"POST", @"method",
                              url,     @"url",
                              data,    @"data",
                              nil];
-    [self request: options then: callback];
+    return [self request: options then: callback];
 }
 
-- (void) put: (NSString *)url data: (NSData *)data then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) put: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              @"PUT",  @"method",
                              url,     @"url",
                              data,    @"data",
                              nil];
-    [self request: options then: callback];
+    return [self request: options then: callback];
 }
 
-- (void) delete: (NSString *)url then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) delete: (NSString *)url then: (MMHTTPCallback)callback
 {
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              @"DELETE", @"method",
                              url,       @"url",
                              nil];
-    [self request: options then: callback];
+    return [self request: options then: callback];
 }
 
-- (void) request: (NSDictionary *)options then: (MMHTTPClientCallback)callback
+- (MMHTTPRequest *) request: (NSDictionary *)options then: (MMHTTPCallback)callback
 {
-    NSString *urlString = [options valueForKey: @"url"];
-    NSString *method = [options valueForKey: @"method"];
-    NSData *data = [options valueForKey: @"data"];
-    NSDictionary *headers = [options valueForKey: @"headers"];
-    NSString *type = [options valueForKey: @"type"];
-    
-    if (!method) method = @"GET";
-    
-    if (![[urlString substringToIndex: 5] isEqualToString: @"http:"]
-        && ![[urlString substringToIndex: 6] isEqualToString: @"https:"])
-    {
-        urlString = [self urlWithPath: urlString];
+    NSString *url = [options objectForKey: @"url"];
+    if (_baseURL && !([url hasPrefix: @"http:"] || [url hasPrefix: @"https:"])) {
+        NSMutableDictionary *mutableOptions = [options mutableCopy];
+        [mutableOptions setObject: [self urlWithPath: url] forKey: @"url"];
+        options = [NSDictionary dictionaryWithDictionary: mutableOptions];
     }
-    NSURL *url = [NSURL URLWithString: urlString];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url
-                                                           cachePolicy: NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval: self.timeout];
-    [request setHTTPMethod: method];
-    
-    if (data && ([method isEqualToString: @"POST"] || [method isEqualToString: @"PUT"])) {
-        [request setHTTPBody: data];
+    NSUInteger timeout = [[options objectForKey: @"timeout"] unsignedIntValue];
+    if (timeout == 0) {
+        [options setValue: [NSNumber numberWithUnsignedInt: self.timeout] forKey: @"timeout"];
     }
-    
-    if (headers) {
-        for (NSString *key in headers) {
-            [request setValue: [headers objectForKey: key] forHTTPHeaderField: key];
-        }
-    }
-    
-    NSURLConnection *connection = [NSURLConnection connectionWithRequest: request delegate: self];
-    NSString *key = [connection description];
-    [_callbacks setObject: [[callback copy] autorelease] forKey: [connection description]];
-    [_connections setObject: connection forKey: key];
-    if (type) [_types setObject: type forKey: key];
-}
-
-
-#pragma mark - NSURLConnection delegate methods
-
-- (void) connection: (NSURLConnection *)connection didReceiveResponse: (NSURLResponse *)response
-{
-    NSString *key = [connection description];
-    NSNumber *status;
-    NSDictionary *headers;
-    
-    if ([response respondsToSelector :@selector(statusCode)])
-    {
-        status = [NSNumber numberWithInt: [(NSHTTPURLResponse *)response statusCode]];
-        headers = [(NSHTTPURLResponse *)response allHeaderFields];
-    }
-    else {
-        NSLog(@"Not an HTTP response? connection: %@ response: %@", connection, response);
-        status = [NSNumber numberWithInt: 500];
-        headers = [NSDictionary dictionary];
-    }
-    
-    [_statusCodes setObject: status forKey: key];
-    [_headers setObject: headers forKey: key];
-    [_data setObject: [[[NSMutableData alloc] init] autorelease] forKey: key];
-}
-
-- (void) connection: (NSURLConnection *)connection didReceiveData: (NSData *)data
-{
-    [[_data objectForKey: [connection description]] appendData: data];
-}
-
-- (void) connection: (NSURLConnection *)connection didFailWithError: (NSError *)error
-{
-    NSString *key = [connection description];
-    MMHTTPClientCallback callback = [_callbacks objectForKey: key];
-    
-    callback(MMHTTPClientStatusError, nil);
-    
-    [_statusCodes removeObjectForKey: key];
-    [_callbacks removeObjectForKey: key];
-    [_data removeObjectForKey: key];
-}
-
-- (void) connectionDidFinishLoading: (NSURLConnection *)connection
-{
-    NSString *key = [connection description];
-    MMHTTPClientCallback callback = [_callbacks objectForKey: key];
-    int status = [[_statusCodes objectForKey: key] intValue];
-    NSString *type = [_types objectForKey: key];
-    id data = nil;
-    if (status == 200) {
-        if ([type isEqualToString: @"text"]) {
-            NSData *rawData = [_data objectForKey: key];
-            data = [[[NSString alloc] initWithBytes: rawData.bytes
-                                             length: rawData.length
-                                           encoding: NSUTF8StringEncoding] autorelease];
-        }
-        else if ([type isEqualToString: @"image"]) {
-            data = [UIImage imageWithData: [_data objectForKey: key]];
-        }
-        else {
-            data = [_data objectForKey: key];
-        }
-    }
-    
-    callback(status, data);
-    
-    [_callbacks removeObjectForKey: key];
-    [_connections removeObjectForKey: key];
-    [_data removeObjectForKey: key];
-    [_headers removeObjectForKey: key];
-    [_statusCodes removeObjectForKey: key];
-    [_types removeObjectForKey: key];
+    return [MMHTTPRequest requestWithOptions: options callback: callback];
 }
 
 - (void) dealloc
 {
-    for (NSURLConnection *conn in _connections) {
-        [conn cancel];
-    }
-
     [_baseURL release];
-    [_callbacks release];
-    [_connections release];
-    [_data release];
-    [_headers release];
-    [_statusCodes release];
-    [_types release];
     [super dealloc];
 }
 

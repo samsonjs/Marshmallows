@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BD1009D1413375B00A9921B /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD1009B1413375B00A9921B /* RegexKitLite.h */; };
-		7BD1009E1413375B00A9921B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1009C1413375B00A9921B /* RegexKitLite.m */; };
 		7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A0141341EB00A9921B /* MMHTTPClient.h */; };
 		7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A1141341EB00A9921B /* MMHTTPClient.m */; };
 		7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A414134FBE00A9921B /* MMHTTPRequest.h */; };
@@ -21,8 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7BD1009B1413375B00A9921B /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		7BD1009C1413375B00A9921B /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		7BD100A0141341EB00A9921B /* MMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPClient.h; sourceTree = "<group>"; };
 		7BD100A1141341EB00A9921B /* MMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPClient.m; sourceTree = "<group>"; };
 		7BD100A414134FBE00A9921B /* MMHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPRequest.h; sourceTree = "<group>"; };
@@ -49,20 +45,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7BD1009F1413396F00A9921B /* RegexKitLite */ = {
-			isa = PBXGroup;
-			children = (
-				7BD1009B1413375B00A9921B /* RegexKitLite.h */,
-				7BD1009C1413375B00A9921B /* RegexKitLite.m */,
-			);
-			name = RegexKitLite;
-			sourceTree = "<group>";
-		};
 		7BE32CFB14132EE3008F2DEA = {
 			isa = PBXGroup;
 			children = (
 				7BE32D0B14132EE4008F2DEA /* Marshmallows */,
-				7BD1009F1413396F00A9921B /* RegexKitLite */,
 				7BE32D0814132EE4008F2DEA /* Frameworks */,
 				7BE32D0714132EE4008F2DEA /* Products */,
 			);
@@ -117,7 +103,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */,
-				7BD1009D1413375B00A9921B /* RegexKitLite.h in Headers */,
 				7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */,
 				7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */,
 				7BD100AA141353B700A9921B /* NSDate+relative.h in Headers */,
@@ -175,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BE32D6B14133618008F2DEA /* NSString+sanity.m in Sources */,
-				7BD1009E1413375B00A9921B /* RegexKitLite.m in Sources */,
 				7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */,
 				7BD100A714134FBE00A9921B /* MMHTTPRequest.m in Sources */,
 				7BD100AB141353B700A9921B /* NSDate+relative.m in Sources */,
