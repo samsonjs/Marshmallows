@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BD1009D1413375B00A9921B /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD1009B1413375B00A9921B /* RegexKitLite.h */; };
+		7BD1009E1413375B00A9921B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1009C1413375B00A9921B /* RegexKitLite.m */; };
+		7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A0141341EB00A9921B /* MMHTTPClient.h */; };
+		7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A1141341EB00A9921B /* MMHTTPClient.m */; };
+		7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A414134FBE00A9921B /* MMHTTPRequest.h */; };
+		7BD100A714134FBE00A9921B /* MMHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A514134FBE00A9921B /* MMHTTPRequest.m */; };
+		7BD100AA141353B700A9921B /* NSDate+relative.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A8141353B700A9921B /* NSDate+relative.h */; };
+		7BD100AB141353B700A9921B /* NSDate+relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A9141353B700A9921B /* NSDate+relative.m */; };
+		7BE32D0A14132EE4008F2DEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0914132EE4008F2DEA /* Foundation.framework */; };
+		7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE32D6814133618008F2DEA /* NSString+sanity.h */; };
+		7BE32D6B14133618008F2DEA /* NSString+sanity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE32D6914133618008F2DEA /* NSString+sanity.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7BD1009B1413375B00A9921B /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		7BD1009C1413375B00A9921B /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		7BD100A0141341EB00A9921B /* MMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPClient.h; sourceTree = "<group>"; };
+		7BD100A1141341EB00A9921B /* MMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPClient.m; sourceTree = "<group>"; };
+		7BD100A414134FBE00A9921B /* MMHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPRequest.h; sourceTree = "<group>"; };
+		7BD100A514134FBE00A9921B /* MMHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPRequest.m; sourceTree = "<group>"; };
+		7BD100A8141353B700A9921B /* NSDate+relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+relative.h"; sourceTree = "<group>"; };
+		7BD100A9141353B700A9921B /* NSDate+relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+relative.m"; sourceTree = "<group>"; };
+		7BE32D0614132EE4008F2DEA /* libMarshmallows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarshmallows.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE32D0914132EE4008F2DEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7BE32D0D14132EE4008F2DEA /* Marshmallows-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marshmallows-Prefix.pch"; sourceTree = "<group>"; };
+		7BE32D0E14132EE4008F2DEA /* Marshmallows.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marshmallows.h; sourceTree = "<group>"; };
+		7BE32D6814133618008F2DEA /* NSString+sanity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+sanity.h"; sourceTree = "<group>"; };
+		7BE32D6914133618008F2DEA /* NSString+sanity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+sanity.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BE32D0314132EE4008F2DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE32D0A14132EE4008F2DEA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BD1009F1413396F00A9921B /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				7BD1009B1413375B00A9921B /* RegexKitLite.h */,
+				7BD1009C1413375B00A9921B /* RegexKitLite.m */,
+			);
+			name = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		7BE32CFB14132EE3008F2DEA = {
+			isa = PBXGroup;
+			children = (
+				7BE32D0B14132EE4008F2DEA /* Marshmallows */,
+				7BD1009F1413396F00A9921B /* RegexKitLite */,
+				7BE32D0814132EE4008F2DEA /* Frameworks */,
+				7BE32D0714132EE4008F2DEA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BE32D0714132EE4008F2DEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BE32D0614132EE4008F2DEA /* libMarshmallows.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BE32D0814132EE4008F2DEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BE32D0914132EE4008F2DEA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BE32D0B14132EE4008F2DEA /* Marshmallows */ = {
+			isa = PBXGroup;
+			children = (
+				7BE32D0E14132EE4008F2DEA /* Marshmallows.h */,
+				7BD100A0141341EB00A9921B /* MMHTTPClient.h */,
+				7BD100A1141341EB00A9921B /* MMHTTPClient.m */,
+				7BD100A414134FBE00A9921B /* MMHTTPRequest.h */,
+				7BD100A514134FBE00A9921B /* MMHTTPRequest.m */,
+				7BD100A8141353B700A9921B /* NSDate+relative.h */,
+				7BD100A9141353B700A9921B /* NSDate+relative.m */,
+				7BE32D6814133618008F2DEA /* NSString+sanity.h */,
+				7BE32D6914133618008F2DEA /* NSString+sanity.m */,
+				7BE32D0C14132EE4008F2DEA /* Supporting Files */,
+			);
+			path = Marshmallows;
+			sourceTree = "<group>";
+		};
+		7BE32D0C14132EE4008F2DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BE32D0D14132EE4008F2DEA /* Marshmallows-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7BE32D0414132EE4008F2DEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */,
+				7BD1009D1413375B00A9921B /* RegexKitLite.h in Headers */,
+				7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */,
+				7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */,
+				7BD100AA141353B700A9921B /* NSDate+relative.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7BE32D0514132EE4008F2DEA /* Marshmallows */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BE32D1314132EE4008F2DEA /* Build configuration list for PBXNativeTarget "Marshmallows" */;
+			buildPhases = (
+				7BE32D0214132EE4008F2DEA /* Sources */,
+				7BE32D0314132EE4008F2DEA /* Frameworks */,
+				7BE32D0414132EE4008F2DEA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marshmallows;
+			productName = Marshmallows;
+			productReference = 7BE32D0614132EE4008F2DEA /* libMarshmallows.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BE32CFD14132EE3008F2DEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Guru Logic";
+			};
+			buildConfigurationList = 7BE32D0014132EE3008F2DEA /* Build configuration list for PBXProject "Marshmallows" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7BE32CFB14132EE3008F2DEA;
+			productRefGroup = 7BE32D0714132EE4008F2DEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BE32D0514132EE4008F2DEA /* Marshmallows */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BE32D0214132EE4008F2DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE32D6B14133618008F2DEA /* NSString+sanity.m in Sources */,
+				7BD1009E1413375B00A9921B /* RegexKitLite.m in Sources */,
+				7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */,
+				7BD100A714134FBE00A9921B /* MMHTTPRequest.m in Sources */,
+				7BD100AB141353B700A9921B /* NSDate+relative.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7BE32D1114132EE4008F2DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7BE32D1214132EE4008F2DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7BE32D1414132EE4008F2DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Marshmallows.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7BE32D1514132EE4008F2DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Marshmallows.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BE32D0014132EE3008F2DEA /* Build configuration list for PBXProject "Marshmallows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE32D1114132EE4008F2DEA /* Debug */,
+				7BE32D1214132EE4008F2DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BE32D1314132EE4008F2DEA /* Build configuration list for PBXNativeTarget "Marshmallows" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE32D1414132EE4008F2DEA /* Debug */,
+				7BE32D1514132EE4008F2DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BE32CFD14132EE3008F2DEA /* Project object */;
+}

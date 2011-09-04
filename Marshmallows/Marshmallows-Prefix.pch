@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Marshmallows' target in the 'Marshmallows' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
