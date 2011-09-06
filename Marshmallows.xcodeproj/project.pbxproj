@@ -22,10 +22,24 @@
 		7BD100D714136F7500A9921B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD100B61413675100A9921B /* UIKit.framework */; };
 		7BD100D814136F7500A9921B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0914132EE4008F2DEA /* Foundation.framework */; };
 		7BD100D914136F7500A9921B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD100B91413675100A9921B /* CoreGraphics.framework */; };
+		7BD100DF14136F7500A9921B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BD100DD14136F7500A9921B /* InfoPlist.strings */; };
+		7BD100E114136F7500A9921B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100E014136F7500A9921B /* main.m */; };
+		7BD100F814136FD200A9921B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD100F714136FD200A9921B /* GHUnitIOS.framework */; };
+		7BD100FB141370B800A9921B /* NSDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100FA141370B800A9921B /* NSDateTest.m */; };
 		7BE32D0A14132EE4008F2DEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0914132EE4008F2DEA /* Foundation.framework */; };
 		7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE32D6814133618008F2DEA /* NSString+sanity.h */; };
 		7BE32D6B14133618008F2DEA /* NSString+sanity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE32D6914133618008F2DEA /* NSString+sanity.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7B13A56B1415CDA70033DCC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BE32CFD14132EE3008F2DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BE32D0514132EE4008F2DEA;
+			remoteInfo = Marshmallows;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7B2C8D7414159642004E1123 /* UIAlertView+simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+simple.h"; sourceTree = "<group>"; };
@@ -38,9 +52,15 @@
 		7BD100A514134FBE00A9921B /* MMHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPRequest.m; sourceTree = "<group>"; };
 		7BD100A8141353B700A9921B /* NSDate+relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+relative.h"; sourceTree = "<group>"; };
 		7BD100A9141353B700A9921B /* NSDate+relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+relative.m"; sourceTree = "<group>"; };
-		7BD100B41413675100A9921B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7BD100B61413675100A9921B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7BD100B91413675100A9921B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		7BD100D514136F7500A9921B /* MarshmallowsTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarshmallowsTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BD100DC14136F7500A9921B /* MarshmallowsTesting-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MarshmallowsTesting-Info.plist"; sourceTree = "<group>"; };
+		7BD100DE14136F7500A9921B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7BD100E014136F7500A9921B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BD100E214136F7500A9921B /* MarshmallowsTesting-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarshmallowsTesting-Prefix.pch"; sourceTree = "<group>"; };
+		7BD100F714136FD200A9921B /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
+		7BD100FA141370B800A9921B /* NSDateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTest.m; sourceTree = "<group>"; };
 		7BE32D0614132EE4008F2DEA /* libMarshmallows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarshmallows.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE32D0914132EE4008F2DEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE32D0D14132EE4008F2DEA /* Marshmallows-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marshmallows-Prefix.pch"; sourceTree = "<group>"; };
@@ -50,6 +70,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7BD100D214136F7500A9921B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B13A56E1415CE360033DCC2 /* libMarshmallows.a in Frameworks */,
+				7BD100D714136F7500A9921B /* UIKit.framework in Frameworks */,
+				7BD100D814136F7500A9921B /* Foundation.framework in Frameworks */,
+				7BD100D914136F7500A9921B /* CoreGraphics.framework in Frameworks */,
+				7BD100F814136FD200A9921B /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7BE32D0314132EE4008F2DEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,10 +93,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BD100DA14136F7500A9921B /* MarshmallowsTesting */ = {
+			isa = PBXGroup;
+			children = (
+				7BD100FA141370B800A9921B /* NSDateTest.m */,
+				7BD100DB14136F7500A9921B /* Supporting Files */,
+			);
+			path = MarshmallowsTesting;
+			sourceTree = "<group>";
+		};
+		7BD100DB14136F7500A9921B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BD100DC14136F7500A9921B /* MarshmallowsTesting-Info.plist */,
+				7BD100DD14136F7500A9921B /* InfoPlist.strings */,
+				7BD100E014136F7500A9921B /* main.m */,
+				7BD100E214136F7500A9921B /* MarshmallowsTesting-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7BE32CFB14132EE3008F2DEA = {
 			isa = PBXGroup;
 			children = (
 				7BE32D0B14132EE4008F2DEA /* Marshmallows */,
+				7BD100DA14136F7500A9921B /* MarshmallowsTesting */,
 				7BE32D0814132EE4008F2DEA /* Frameworks */,
 				7BE32D0714132EE4008F2DEA /* Products */,
 			);
@@ -74,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				7BE32D0614132EE4008F2DEA /* libMarshmallows.a */,
+				7BD100D514136F7500A9921B /* MarshmallowsTesting.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +135,10 @@
 		7BE32D0814132EE4008F2DEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BD100F714136FD200A9921B /* GHUnitIOS.framework */,
 				7BE32D0914132EE4008F2DEA /* Foundation.framework */,
+				7BD100B61413675100A9921B /* UIKit.framework */,
+				7BD100B91413675100A9921B /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,6 +192,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		7BD100D414136F7500A9921B /* MarshmallowsTesting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BD100F414136F7500A9921B /* Build configuration list for PBXNativeTarget "MarshmallowsTesting" */;
+			buildPhases = (
+				7BD100D114136F7500A9921B /* Sources */,
+				7BD100D214136F7500A9921B /* Frameworks */,
+				7BD100D314136F7500A9921B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B13A56C1415CDA70033DCC2 /* PBXTargetDependency */,
+			);
+			name = MarshmallowsTesting;
+			productName = MarshmallowsTesting;
+			productReference = 7BD100D514136F7500A9921B /* MarshmallowsTesting.app */;
+			productType = "com.apple.product-type.application";
+		};
 		7BE32D0514132EE4008F2DEA /* Marshmallows */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7BE32D1314132EE4008F2DEA /* Build configuration list for PBXNativeTarget "Marshmallows" */;
@@ -173,11 +248,32 @@
 			projectRoot = "";
 			targets = (
 				7BE32D0514132EE4008F2DEA /* Marshmallows */,
+				7BD100D414136F7500A9921B /* MarshmallowsTesting */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		7BD100D314136F7500A9921B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BD100DF14136F7500A9921B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7BD100D114136F7500A9921B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BD100E114136F7500A9921B /* main.m in Sources */,
+				7BD100FB141370B800A9921B /* NSDateTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7BE32D0214132EE4008F2DEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,7 +289,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7B13A56C1415CDA70033DCC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BE32D0514132EE4008F2DEA /* Marshmallows */;
+			targetProxy = 7B13A56B1415CDA70033DCC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7BD100DD14136F7500A9921B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BD100DE14136F7500A9921B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		7BD100F514136F7500A9921B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarshmallowsTesting/MarshmallowsTesting-Prefix.pch";
+				INFOPLIST_FILE = "MarshmallowsTesting/MarshmallowsTesting-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7BD100F614136F7500A9921B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MarshmallowsTesting/MarshmallowsTesting-Prefix.pch";
+				INFOPLIST_FILE = "MarshmallowsTesting/MarshmallowsTesting-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		7BE32D1114132EE4008F2DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -269,6 +429,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7BD100F414136F7500A9921B /* Build configuration list for PBXNativeTarget "MarshmallowsTesting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BD100F514136F7500A9921B /* Debug */,
+				7BD100F614136F7500A9921B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7BE32D0014132EE3008F2DEA /* Build configuration list for PBXProject "Marshmallows" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
