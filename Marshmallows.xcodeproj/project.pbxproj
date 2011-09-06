@@ -7,24 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A0141341EB00A9921B /* MMHTTPClient.h */; };
+		7B13A56E1415CE360033DCC2 /* libMarshmallows.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0614132EE4008F2DEA /* libMarshmallows.a */; };
+		7B2C8D7614159642004E1123 /* UIAlertView+simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B2C8D7414159642004E1123 /* UIAlertView+simple.h */; };
+		7B2C8D7714159642004E1123 /* UIAlertView+simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C8D7514159642004E1123 /* UIAlertView+simple.m */; };
+		7B2C8D811415C450004E1123 /* UIAlertViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B2C8D7F1415C450004E1123 /* UIAlertViewDelegate.h */; };
+		7B2C8D821415C450004E1123 /* UIAlertViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2C8D801415C450004E1123 /* UIAlertViewDelegate.m */; };
+		7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A0141341EB00A9921B /* MMHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A1141341EB00A9921B /* MMHTTPClient.m */; };
-		7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A414134FBE00A9921B /* MMHTTPRequest.h */; };
+		7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A414134FBE00A9921B /* MMHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BD100A714134FBE00A9921B /* MMHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A514134FBE00A9921B /* MMHTTPRequest.m */; };
 		7BD100AA141353B700A9921B /* NSDate+relative.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD100A8141353B700A9921B /* NSDate+relative.h */; };
 		7BD100AB141353B700A9921B /* NSDate+relative.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD100A9141353B700A9921B /* NSDate+relative.m */; };
+		7BD100AC141364A900A9921B /* Marshmallows.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE32D0E14132EE4008F2DEA /* Marshmallows.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BD100D714136F7500A9921B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD100B61413675100A9921B /* UIKit.framework */; };
+		7BD100D814136F7500A9921B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0914132EE4008F2DEA /* Foundation.framework */; };
+		7BD100D914136F7500A9921B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD100B91413675100A9921B /* CoreGraphics.framework */; };
 		7BE32D0A14132EE4008F2DEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE32D0914132EE4008F2DEA /* Foundation.framework */; };
 		7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BE32D6814133618008F2DEA /* NSString+sanity.h */; };
 		7BE32D6B14133618008F2DEA /* NSString+sanity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE32D6914133618008F2DEA /* NSString+sanity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B2C8D7414159642004E1123 /* UIAlertView+simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+simple.h"; sourceTree = "<group>"; };
+		7B2C8D7514159642004E1123 /* UIAlertView+simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+simple.m"; sourceTree = "<group>"; };
+		7B2C8D7F1415C450004E1123 /* UIAlertViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewDelegate.h; sourceTree = "<group>"; };
+		7B2C8D801415C450004E1123 /* UIAlertViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewDelegate.m; sourceTree = "<group>"; };
 		7BD100A0141341EB00A9921B /* MMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPClient.h; sourceTree = "<group>"; };
 		7BD100A1141341EB00A9921B /* MMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPClient.m; sourceTree = "<group>"; };
 		7BD100A414134FBE00A9921B /* MMHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHTTPRequest.h; sourceTree = "<group>"; };
 		7BD100A514134FBE00A9921B /* MMHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHTTPRequest.m; sourceTree = "<group>"; };
 		7BD100A8141353B700A9921B /* NSDate+relative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+relative.h"; sourceTree = "<group>"; };
 		7BD100A9141353B700A9921B /* NSDate+relative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+relative.m"; sourceTree = "<group>"; };
+		7BD100B41413675100A9921B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		7BD100B61413675100A9921B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7BD100B91413675100A9921B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		7BE32D0614132EE4008F2DEA /* libMarshmallows.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarshmallows.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE32D0914132EE4008F2DEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE32D0D14132EE4008F2DEA /* Marshmallows-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Marshmallows-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +98,10 @@
 				7BD100A9141353B700A9921B /* NSDate+relative.m */,
 				7BE32D6814133618008F2DEA /* NSString+sanity.h */,
 				7BE32D6914133618008F2DEA /* NSString+sanity.m */,
+				7B2C8D7414159642004E1123 /* UIAlertView+simple.h */,
+				7B2C8D7514159642004E1123 /* UIAlertView+simple.m */,
+				7B2C8D7F1415C450004E1123 /* UIAlertViewDelegate.h */,
+				7B2C8D801415C450004E1123 /* UIAlertViewDelegate.m */,
 				7BE32D0C14132EE4008F2DEA /* Supporting Files */,
 			);
 			path = Marshmallows;
@@ -102,10 +122,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */,
+				7BD100AC141364A900A9921B /* Marshmallows.h in Headers */,
 				7BD100A2141341EB00A9921B /* MMHTTPClient.h in Headers */,
 				7BD100A614134FBE00A9921B /* MMHTTPRequest.h in Headers */,
+				7BE32D6A14133618008F2DEA /* NSString+sanity.h in Headers */,
 				7BD100AA141353B700A9921B /* NSDate+relative.h in Headers */,
+				7B2C8D7614159642004E1123 /* UIAlertView+simple.h in Headers */,
+				7B2C8D811415C450004E1123 /* UIAlertViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +186,8 @@
 				7BD100A3141341EB00A9921B /* MMHTTPClient.m in Sources */,
 				7BD100A714134FBE00A9921B /* MMHTTPRequest.m in Sources */,
 				7BD100AB141353B700A9921B /* NSDate+relative.m in Sources */,
+				7B2C8D7714159642004E1123 /* UIAlertView+simple.m in Sources */,
+				7B2C8D821415C450004E1123 /* UIAlertViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +241,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -229,7 +257,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
