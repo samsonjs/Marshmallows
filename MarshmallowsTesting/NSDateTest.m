@@ -7,7 +7,7 @@
 //
 
 #import <GHUnitIOS/GHUnit.h>
-#import "NSDate+relative.h"
+#import "NSDate+marshmallows.h"
 
 #define MINUTE 60.0
 #define HOUR   (60.0 * MINUTE)

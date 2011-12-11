@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UIAlertView+simple.h"
+#import "UIAlertView+marshmallows.h"
 
 @interface UIAlertViewDelegate : NSObject <UIAlertViewDelegate>
 {

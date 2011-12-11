@@ -1,12 +1,12 @@
 //
-//  NSDate+relative.m
+//  NSDate+marshmallows.m
 //  UberClassifieds
 //
 //  Created by Sami Samhuri on 11-06-18.
 //  Copyright 2011 Betastreet Media. All rights reserved.
 //
 
-#import "NSDate+relative.h"
+#import "NSDate+marshmallows.h"
 
 #define MINUTE 60.0
 #define HOUR   (60.0 * MINUTE)
@@ -15,7 +15,17 @@
 #define MONTH  (30.0 * DAY)
 #define YEAR   (365.25 * DAY)
 
-@implementation NSDate (NSDate_relative)
+@implementation NSDate (NSDate_marshmallows)
+
++ (NSDate *) dateWithYear: (NSInteger)year month: (NSInteger)month day: (NSInteger)day
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [[[NSDateComponents alloc] init] autorelease];
+    [components setYear: year];
+    [components setMonth: month];
+    [components setDay: day];
+    return [calendar dateFromComponents: components];
+}   
 
 - (NSString *) relativeToNow
 {

@@ -1,5 +1,5 @@
 //
-//  NSDate+relative.h
+//  NSDate+marshmallows.h
 //  UberClassifieds
 //
 //  Created by Sami Samhuri on 11-06-18.
@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSDate (NSDate_relative)
+@interface NSDate (NSDate_marshmallows)
 
++ (NSDate *) dateWithYear: (NSInteger)year month: (NSInteger)month day: (NSInteger)day;
 - (NSString *) relativeToNow;
 
 @end

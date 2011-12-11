@@ -1,5 +1,5 @@
 //
-//  UIAlertView+simple.h
+//  UIAlertView+marshmallows.h
 //  DatingX
 //
 //  Created by Sami Samhuri on 11-08-24.
@@ -10,7 +10,7 @@
 
 typedef void (^UIAlertViewCallback)(BOOL ok);
 
-@interface UIAlertView (UIAlertView_simple)
+@interface UIAlertView (UIAlertView_marshmallows)
 
 + (void) showAlertWithTitle: (NSString *)title message: (NSString *)message;
 

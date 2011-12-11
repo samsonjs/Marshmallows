@@ -1,12 +1,12 @@
 //
-//  NSString+sanity.m
+//  NSString+marshmallows.m
 //  Marshmallows
 //
 //  Created by Sami Samhuri on 11-09-03.
 //  Copyright 2011 Guru Logic. All rights reserved.
 //
 
-#import "NSString+sanity.h"
+#import "NSString+marshmallows.h"
 
 // Encode a string to embed in an URL.
 NSString* URLEncode(NSString *string) {
@@ -19,7 +19,7 @@ NSString* URLEncode(NSString *string) {
 }
 
 
-@implementation NSString (NSString_sanity)
+@implementation NSString (NSString_marshmallows)
 
 - (NSString *) stringByTrimmingWhitespace
 {

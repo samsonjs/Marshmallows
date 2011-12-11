@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "NSDate+relative.h"
-#import "NSString+sanity.h"
-#import "UIAlertView+simple.h"
+#import "NSDate+marshmallows.h"
+#import "NSString+marshmallows.h"
+#import "UIAlertView+marshmallows.h"

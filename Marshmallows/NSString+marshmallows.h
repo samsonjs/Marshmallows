@@ -1,5 +1,5 @@
 //
-//  NSString+sanity.h
+//  NSString+marshmallows.h
 //  Marshmallows
 //
 //  Created by Sami Samhuri on 11-09-03.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (NSString_sanity)
+@interface NSString (NSString_marshmallows)
 
 - (NSString *) firstMatch: (NSString *)pattern;
 - (NSString *) stringByReplacing: (NSString *)pattern with: (NSString *)replacement;

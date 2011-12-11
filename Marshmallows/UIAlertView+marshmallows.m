@@ -1,15 +1,15 @@
 //
-//  UIAlertView+simple.m
+//  UIAlertView+marshmallows.m
 //  DatingX
 //
 //  Created by Sami Samhuri on 11-08-24.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "UIAlertView+simple.h"
+#import "UIAlertView+marshmallows.h"
 #import "UIAlertViewDelegate.h"
 
-@implementation UIAlertView (UIAlertView_simple)
+@implementation UIAlertView (UIAlertView_marshmallows)
 
 + (void) showAlertWithTitle: (NSString *)title message: (NSString *)message
 {
