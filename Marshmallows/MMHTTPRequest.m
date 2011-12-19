@@ -120,7 +120,7 @@
     [_responseData release];
     _responseData = nil;
     _statusCode = MMHTTPRequestStatusError;
-    self.callback(self.statusCode, nil);
+    self.callback(self.statusCode, error);
 }
 
 - (void) connectionDidFinishLoading: (NSURLConnection *)connection
