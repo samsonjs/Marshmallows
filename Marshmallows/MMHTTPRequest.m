@@ -89,6 +89,7 @@
     }
     
     self.connection = [NSURLConnection connectionWithRequest: self.request delegate: self];
+    [self.connection start];
 }
 
 #pragma mark - NSURLConnection delegate methods
