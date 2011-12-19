@@ -236,6 +236,7 @@
 		7BE32CFD14132EE3008F2DEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Guru Logic";
 			};
 			buildConfigurationList = 7BE32D0014132EE3008F2DEA /* Build configuration list for PBXProject "Marshmallows" */;
@@ -324,6 +325,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MarshmallowsTesting/MarshmallowsTesting-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MarshmallowsTesting/MarshmallowsTesting-Info.plist";
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -346,6 +348,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MarshmallowsTesting/MarshmallowsTesting-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "MarshmallowsTesting/MarshmallowsTesting-Info.plist";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
@@ -404,6 +407,7 @@
 				DSTROOT = /tmp/Marshmallows.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -420,6 +424,7 @@
 				DSTROOT = /tmp/Marshmallows.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Marshmallows/Marshmallows-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
