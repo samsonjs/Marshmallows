@@ -28,6 +28,7 @@
 + (MMHTTPRequest *) getImage: (NSString *)url then: (MMHTTPImageCallback)callback;
 + (MMHTTPRequest *) getText: (NSString *)url then: (MMHTTPTextCallback)callback;
 + (MMHTTPRequest *) post: (NSString *)url then: (MMHTTPCallback)callback;
++ (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback;
 + (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback;
 + (MMHTTPRequest *) put: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback;
 + (MMHTTPRequest *) delete: (NSString *)url then: (MMHTTPCallback)callback;
@@ -44,6 +45,7 @@
 - (MMHTTPRequest *) get: (NSString *)url then: (MMHTTPCallback)callback;
 - (MMHTTPRequest *) getImage: (NSString *)url then: (MMHTTPImageCallback)callback;
 - (MMHTTPRequest *) getText: (NSString *)url then: (MMHTTPTextCallback)callback;
+- (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback;
 - (MMHTTPRequest *) post: (NSString *)url then: (MMHTTPCallback)callback;
 - (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback;
 - (MMHTTPRequest *) put: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback;

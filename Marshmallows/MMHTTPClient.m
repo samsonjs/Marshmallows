@@ -7,7 +7,7 @@
 //
 
 #import "MMHTTPClient.h"
-#import "NSString+sanity.h"
+#import "NSString+marshmallows.h"
 
 MMHTTPClient *_client;
 
@@ -98,6 +98,11 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     return [[self sharedClient] post: url then: callback];
 }
 
++ (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback
+{
+    return [[self sharedClient] post: url fields: fields then: callback];
+}
+
 + (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
 {
     return [[self sharedClient] post: url data: data then: callback];
@@ -186,6 +191,18 @@ NSString *JoinURLComponents(NSString *first, va_list args)
                              url,     @"url",
                              nil];
     return [self request: options then: callback];
+}
+
+- (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback
+{
+    NSMutableArray *parts = [NSMutableArray array];
+    NSString *value;
+    for (NSString *key in [fields keyEnumerator]) {
+        value = [fields objectForKey: key];
+        [parts addObject: [NSString stringWithFormat: @"%@=%@", [key stringByURLEncoding], [value stringByURLEncoding]]];
+    }
+    NSString *body = [parts componentsJoinedByString: @"&"];
+    return [self post: url data: [body dataUsingEncoding: NSUTF8StringEncoding] then: callback];
 }
 
 - (MMHTTPRequest *) post: (NSString *)url data: (NSData *)data then: (MMHTTPCallback)callback
