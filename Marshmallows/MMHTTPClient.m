@@ -220,15 +220,15 @@ NSString *JoinURLComponents(NSString *first, va_list args)
 - (MMHTTPRequest *) request: (NSDictionary *)options then: (MMHTTPCallback)callback
 {
     NSString *url = [options objectForKey: @"url"];
+    NSMutableDictionary *mutableOptions = [options mutableCopy];
     if (_baseURL && !([url hasPrefix: @"http:"] || [url hasPrefix: @"https:"])) {
-        NSMutableDictionary *mutableOptions = [options mutableCopy];
         [mutableOptions setObject: [self urlWithPath: url] forKey: @"url"];
-        options = [NSDictionary dictionaryWithDictionary: mutableOptions];
     }
     NSUInteger timeout = [[options objectForKey: @"timeout"] unsignedIntValue];
     if (timeout == 0) {
-        [options setValue: [NSNumber numberWithUnsignedInt: self.timeout] forKey: @"timeout"];
+        [mutableOptions setValue: [NSNumber numberWithUnsignedInt: self.timeout] forKey: @"timeout"];
     }
+    options = [NSDictionary dictionaryWithDictionary: mutableOptions];
     return [MMHTTPRequest requestWithOptions: options callback: callback];
 }
 
