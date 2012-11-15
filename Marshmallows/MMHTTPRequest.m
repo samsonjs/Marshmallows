@@ -29,7 +29,7 @@
 
 + (id) requestWithOptions: (NSDictionary *)options callback: (MMHTTPCallback)callback
 {
-    return [[[self alloc] initWithOptions: options callback: callback] autorelease];
+    return [[self alloc] initWithOptions: options callback: callback];
 }
 
 - (id) initWithOptions: (NSDictionary *)options callback: (MMHTTPCallback)callback
@@ -52,6 +52,10 @@
 - (void) cancel
 {
     [_connection cancel];
+    if (self.callback) {
+        Block_release(self.callback);
+        self.callback = nil;
+    }
 }
 
 - (NSData *) responseData
@@ -61,9 +65,9 @@
 
 - (NSString *) responseText
 {
-    return [[[NSString alloc] initWithBytes: _responseData.bytes
-                                     length: _responseData.length
-                                   encoding: NSUTF8StringEncoding] autorelease];
+    return [[NSString alloc] initWithBytes: _responseData.bytes
+                                    length: _responseData.length
+                                  encoding: NSUTF8StringEncoding];
 }
 
 - (UIImage *) responseImage
@@ -96,10 +100,11 @@
 
 - (void) connection: (NSURLConnection *)connection didReceiveResponse: (NSURLResponse *)response
 {
+//    NSLog(@"didReceiveResponse: %@",response);
     if ([response respondsToSelector: @selector(statusCode)])
     {
         _statusCode = [(NSHTTPURLResponse *)response statusCode];
-        _responseHeaders = [[(NSHTTPURLResponse *)response allHeaderFields] retain];
+        _responseHeaders = [(NSHTTPURLResponse *)response allHeaderFields];
     }
     else {
         NSLog(@"Not an HTTP response? connection: %@ response: %@", connection, response);
@@ -112,19 +117,23 @@
 
 - (void) connection: (NSURLConnection *)connection didReceiveData: (NSData *)data
 {
+//    NSLog(@"didReceiveData: %@", data);
     [_responseData appendData: data];
 }
 
 - (void) connection: (NSURLConnection *)connection didFailWithError: (NSError *)error
 {
-    [_responseData release];
+    NSLog(@"didFailWithError: %@", error);
     _responseData = nil;
     _statusCode = MMHTTPRequestStatusError;
-    self.callback(self.statusCode, error);
+    if (self.callback) {
+        self.callback(self.statusCode, error);
+    }
 }
 
 - (void) connectionDidFinishLoading: (NSURLConnection *)connection
 {
+//    NSLog(@"didFinishLoading: %d", self.statusCode);
     id data = nil;
     if (self.statusCode == 200) {
         if ([self.type isEqualToString: @"text"]) {
@@ -137,23 +146,10 @@
             data = self.responseData;
         }
     }
-    
-    self.callback(self.statusCode, data);
-}
 
-- (void) dealloc
-{
-    [_connection release];
-    [_request release];
-    [_method release];
-    [_url release];
-    [_headers release];
-    [_data release];
-    [_type release];
-    [_callback release];
-    [_responseHeaders release];
-    [_responseData release];
-    [super dealloc];
+    if (self.callback) {
+        self.callback(self.statusCode, data);
+    }
 }
 
 @end

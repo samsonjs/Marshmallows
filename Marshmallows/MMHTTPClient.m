@@ -9,7 +9,6 @@
 #import "MMHTTPClient.h"
 #import "NSString+marshmallows.h"
 
-MMHTTPClient *_client;
 // Encode a string to embed in an URL.
 NSString* MMHTTPURLEncode(NSString *string) {
     return (__bridge NSString *)
@@ -20,6 +19,7 @@ NSString* MMHTTPURLEncode(NSString *string) {
                                             kCFStringEncodingUTF8);
 }
 
+MMHTTPClient *_sharedMMHTTPClient;
 
 NSString *JoinURLComponents(NSString *first, va_list args)
 {
@@ -39,25 +39,25 @@ NSString *JoinURLComponents(NSString *first, va_list args)
 
 + (MMHTTPClient *) sharedClient
 {
-    if (!_client) {
-        _client = [[self alloc] init];
+    if (!_sharedMMHTTPClient) {
+        _sharedMMHTTPClient = [[self alloc] init];
     }
-    return _client;
+    return _sharedMMHTTPClient;
 }
 
 + (id) client
 {
-    return [[[self alloc] init] autorelease];
+    return [[self alloc] init];
 }
 
 + (id) clientWithBaseURL: (NSString *)baseURL
 {
-    return [[[self alloc] initWithBaseURL: baseURL] autorelease];
+    return [[self alloc] initWithBaseURL: baseURL];
 }
 
 + (id) clientWithBaseURL: (NSString *)baseURL timeout: (NSUInteger)timeout
 {
-    return [[[self alloc] initWithBaseURL: baseURL timeout: timeout] autorelease];
+    return [[self alloc] initWithBaseURL: baseURL timeout: timeout];
 }
 
 + (NSString *) pathFor: (NSString *)first, ...
@@ -173,7 +173,11 @@ NSString *JoinURLComponents(NSString *first, va_list args)
 
 - (MMHTTPRequest *) getImage: (NSString *)url then: (MMHTTPImageCallback)callback
 {
-    return [self request: [NSDictionary dictionary] then: (MMHTTPCallback)callback];
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             url,      @"url",
+                             @"image", @"type",
+                             nil];
+    return [self request: options then: (MMHTTPCallback)callback];
 }
 
 - (MMHTTPRequest *) getText: (NSString *)url then: (MMHTTPTextCallback)callback
@@ -203,7 +207,6 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     return [self request: options then: callback];
 }
 
-- (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback
 - (NSString *) encodeFields: (NSDictionary *)fields withPrefix: (NSString *)prefix
 {
     NSString *suffix = @"";
@@ -281,12 +284,6 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     }
     options = [NSDictionary dictionaryWithDictionary: mutableOptions];
     return [MMHTTPRequest requestWithOptions: options callback: callback];
-}
-
-- (void) dealloc
-{
-    [_baseURL release];
-    [super dealloc];
 }
 
 @end
