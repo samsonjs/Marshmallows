@@ -28,7 +28,7 @@ typedef void (^MMHTTPImageCallback)(NSInteger status, UIImage *image);
 @property (nonatomic, retain) NSMutableDictionary *headers;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSString *type;
-@property (nonatomic, copy) MMHTTPCallback callback;
+@property (nonatomic, assign) MMHTTPCallback callback;
 @property NSUInteger timeout;
 @property (readonly) NSInteger statusCode;
 @property (strong, readonly) NSDictionary *responseHeaders;

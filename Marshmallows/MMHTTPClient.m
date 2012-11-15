@@ -7,16 +7,15 @@
 //
 
 #import "MMHTTPClient.h"
-#import "NSString+marshmallows.h"
 
 // Encode a string to embed in an URL.
 NSString* MMHTTPURLEncode(NSString *string) {
-    return (__bridge NSString *)
-    CFURLCreateStringByAddingPercentEscapes(NULL,
-                                            (__bridge CFStringRef) string,
-                                            NULL,
-                                            (CFStringRef) @"!*'();:@&=+$,/?%#[]",
-                                            kCFStringEncodingUTF8);
+    CFStringRef urlStringRef = CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                       (CFStringRef) string,
+                                                                       NULL,
+                                                                       (CFStringRef) @"!*'();:@&=+$,/?%#[]",
+                                                                       kCFStringEncodingUTF8);
+    return [(NSString *)urlStringRef autorelease];
 }
 
 MMHTTPClient *_sharedMMHTTPClient;
@@ -47,17 +46,17 @@ NSString *JoinURLComponents(NSString *first, va_list args)
 
 + (id) client
 {
-    return [[self alloc] init];
+    return [[[self alloc] init] autorelease];
 }
 
 + (id) clientWithBaseURL: (NSString *)baseURL
 {
-    return [[self alloc] initWithBaseURL: baseURL];
+    return [[[self alloc] initWithBaseURL: baseURL] autorelease];
 }
 
 + (id) clientWithBaseURL: (NSString *)baseURL timeout: (NSUInteger)timeout
 {
-    return [[self alloc] initWithBaseURL: baseURL timeout: timeout];
+    return [[[self alloc] initWithBaseURL: baseURL timeout: timeout] autorelease];
 }
 
 + (NSString *) pathFor: (NSString *)first, ...
@@ -283,7 +282,13 @@ NSString *JoinURLComponents(NSString *first, va_list args)
         [mutableOptions setValue: [NSNumber numberWithUnsignedInt: self.timeout] forKey: @"timeout"];
     }
     options = [NSDictionary dictionaryWithDictionary: mutableOptions];
+    [mutableOptions release];
     return [MMHTTPRequest requestWithOptions: options callback: callback];
+}
+
+- (void) dealloc
+{
+    [super dealloc];
 }
 
 @end
