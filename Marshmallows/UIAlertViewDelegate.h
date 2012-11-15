@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UIAlertView+marshmallows.h"
+#import <UIKit/UIKit.h>
+
+typedef void (^UIAlertViewCallback)(int buttonClicked, BOOL canceled);
 
 @interface UIAlertViewDelegate : NSObject <UIAlertViewDelegate>
 {

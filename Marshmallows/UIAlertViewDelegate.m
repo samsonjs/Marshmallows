@@ -26,8 +26,8 @@
 
 - (void) alertView: (UIAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
-    BOOL ok = (buttonIndex == 1);
-    _callback(ok);
+    BOOL canceled = (buttonIndex == 0);
+    _callback(buttonIndex, canceled);
 }
 
 - (void) dealloc
