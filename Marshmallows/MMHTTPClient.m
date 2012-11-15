@@ -10,13 +10,23 @@
 #import "NSString+marshmallows.h"
 
 MMHTTPClient *_client;
+// Encode a string to embed in an URL.
+NSString* MMHTTPURLEncode(NSString *string) {
+    return (__bridge NSString *)
+    CFURLCreateStringByAddingPercentEscapes(NULL,
+                                            (__bridge CFStringRef) string,
+                                            NULL,
+                                            (CFStringRef) @"!*'();:@&=+$,/?%#[]",
+                                            kCFStringEncodingUTF8);
+}
+
 
 NSString *JoinURLComponents(NSString *first, va_list args)
 {
     NSMutableString *url = [NSMutableString string];
     NSString *slash = @"";
     for (NSString *arg = first; arg != nil; arg = va_arg(args, NSString *)) {
-        [url appendFormat: @"%@%@", slash, [arg stringByURLEncoding]];
+        [url appendFormat: @"%@%@", slash, MMHTTPURLEncode(arg)];
         slash = @"/";
     }
     return [NSString stringWithString: url];
@@ -194,14 +204,38 @@ NSString *JoinURLComponents(NSString *first, va_list args)
 }
 
 - (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback
+- (NSString *) encodeFields: (NSDictionary *)fields withPrefix: (NSString *)prefix
 {
+    NSString *suffix = @"";
+    if (prefix) {
+        prefix = [NSString stringWithFormat: @"%@[", prefix];
+        suffix = @"]";
+    }
+    else {
+        prefix = @"";
+    }
     NSMutableArray *parts = [NSMutableArray array];
     NSString *value;
     for (NSString *key in [fields keyEnumerator]) {
         value = [fields objectForKey: key];
-        [parts addObject: [NSString stringWithFormat: @"%@=%@", [key stringByURLEncoding], [value stringByURLEncoding]]];
+        if ([value isKindOfClass: [NSDictionary class]]) {
+            [parts addObject: [self encodeFields: (NSDictionary *)value withPrefix: [NSString stringWithFormat: @"%@%@", prefix, key]]];
+        }
+        else {
+            [parts addObject: [NSString stringWithFormat: @"%@%@%@=%@", prefix, MMHTTPURLEncode(key), suffix, MMHTTPURLEncode(value)]];
+        }
     }
-    NSString *body = [parts componentsJoinedByString: @"&"];
+    return [parts componentsJoinedByString: @"&"];
+}
+
+- (NSString *) encodeFields: (NSDictionary *)fields
+{
+    return [self encodeFields: fields withPrefix: nil];
+}
+
+- (MMHTTPRequest *) post: (NSString *)url fields: (NSDictionary *)fields then: (MMHTTPCallback)callback
+{
+    NSString *body = [self encodeFields: fields];
     return [self post: url data: [body dataUsingEncoding: NSUTF8StringEncoding] then: callback];
 }
 
