@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                = "Marshmallows"
-  s.version             = "0.1.0"
+  s.version             = "0.1.1"
   s.summary             = "Marshmallows sweeten up your Cocoa for iOS."
   s.description         = <<-DESC
                           Sometimes the simple things are verbose with Cocoa. This project aims
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.author              = { "Sami Samhuri" => "sami@samhuri.net" }
   s.social_media_url    = "https://twitter.com/_sjs"
   s.platform            = :ios, "5.0"
-  s.source              = { :git => "https://github.com/samsonjs/Marshmallows.git", :tag => "0.1.0" }
+  s.source              = { :git => "https://github.com/samsonjs/Marshmallows.git", :tag => "0.1.1" }
   s.source_files        = "Marshmallows"
   s.public_header_files = "Marshmallows/**/*.h"
   s.requires_arc        = false
