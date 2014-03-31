@@ -30,10 +30,10 @@ NSString* URLEncode(NSString *string) {
 {
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern: pattern
-                                  options: 0
+                                  options: NSMatchingReportCompletion
                                   error: NULL];
     NSRange match = [regex rangeOfFirstMatchInString: self
-                                             options: NSMatchingCompleted
+                                             options: NSMatchingReportCompletion
                                                range: NSMakeRange(0, self.length)];
     return match.location == NSNotFound ? nil : [self substringWithRange: match];
 }
@@ -45,7 +45,7 @@ NSString* URLEncode(NSString *string) {
                                   options: NSRegularExpressionCaseInsensitive
                                   error: NULL];
     return [regex stringByReplacingMatchesInString: self
-                                           options: NSMatchingCompleted
+                                           options: NSMatchingReportCompletion
                                              range: NSMakeRange(0, [self length])
                                       withTemplate: @""];
 }
@@ -54,7 +54,7 @@ NSString* URLEncode(NSString *string) {
 {
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern: pattern
-                                  options: 0
+                                  options: NSMatchingReportCompletion
                                   error: NULL];
     NSRange match = [regex rangeOfFirstMatchInString: self
                                              options: NSMatchingCompleted

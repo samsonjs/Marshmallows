@@ -278,7 +278,7 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     if (_baseURL && !([url hasPrefix: @"http:"] || [url hasPrefix: @"https:"])) {
         [mutableOptions setObject: [self urlWithPath: url] forKey: @"url"];
     }
-    NSUInteger timeout = [[options objectForKey: @"timeout"] unsignedIntValue];
+    NSUInteger timeout = [[options objectForKey: @"timeout"] unsignedLongValue];
     if (timeout == 0) {
         [mutableOptions setValue: [NSNumber numberWithUnsignedLong: self.timeout] forKey: @"timeout"];
     }
