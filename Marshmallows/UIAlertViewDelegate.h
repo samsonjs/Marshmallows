@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void (^UIAlertViewCallback)(int buttonClicked, BOOL canceled);
+typedef void (^UIAlertViewCallback)(long buttonClicked, BOOL canceled);
 
 @interface UIAlertViewDelegate : NSObject <UIAlertViewDelegate>
 {

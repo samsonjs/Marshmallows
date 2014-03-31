@@ -280,7 +280,7 @@ NSString *JoinURLComponents(NSString *first, va_list args)
     }
     NSUInteger timeout = [[options objectForKey: @"timeout"] unsignedIntValue];
     if (timeout == 0) {
-        [mutableOptions setValue: [NSNumber numberWithUnsignedInt: self.timeout] forKey: @"timeout"];
+        [mutableOptions setValue: [NSNumber numberWithUnsignedLong: self.timeout] forKey: @"timeout"];
     }
     options = [NSDictionary dictionaryWithDictionary: mutableOptions];
     return [MMHTTPRequest requestWithOptions: options callback: callback];
