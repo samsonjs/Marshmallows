@@ -237,7 +237,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "Guru Logic";
+				ORGANIZATIONNAME = "Sami Samhuri";
 			};
 			buildConfigurationList = 7BE32D0014132EE3008F2DEA /* Build configuration list for PBXProject "Marshmallows" */;
 			compatibilityVersion = "Xcode 3.2";

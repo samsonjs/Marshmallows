@@ -3,7 +3,7 @@
 //  DatingX
 //
 //  Created by Sami Samhuri on 11-08-24.
-//  Copyright 2011 Guru Logic. All rights reserved.
+//  Copyright 2011 Sami Samhuri. All rights reserved.
 //
 
 #import "UIAlertView+marshmallows.h"
