@@ -30,7 +30,7 @@ NSString* URLEncode(NSString *string) {
 {
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern: pattern
-                                  options: NSMatchingReportCompletion
+                                  options: 0
                                   error: NULL];
     NSRange match = [regex rangeOfFirstMatchInString: self
                                              options: NSMatchingReportCompletion
@@ -42,7 +42,7 @@ NSString* URLEncode(NSString *string) {
 {
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern: pattern
-                                  options: NSRegularExpressionCaseInsensitive
+                                  options: 0
                                   error: NULL];
     return [regex stringByReplacingMatchesInString: self
                                            options: NSMatchingReportCompletion
@@ -54,10 +54,10 @@ NSString* URLEncode(NSString *string) {
 {
     NSRegularExpression *regex = [NSRegularExpression
                                   regularExpressionWithPattern: pattern
-                                  options: NSMatchingReportCompletion
+                                  options: 0
                                   error: NULL];
     NSRange match = [regex rangeOfFirstMatchInString: self
-                                             options: NSMatchingCompleted
+                                             options: NSMatchingReportCompletion
                                                range: NSMakeRange(0, self.length)];
     if (match.location != NSNotFound) {
         NSString *rest = [self substringFromIndex: match.location + match.length];
